@@ -104,6 +104,18 @@
             tools:layout_editor_absoluteY="633dp" />
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/ErrorMessage"
+        android:visibility="invisible"
+        android:textAlignment="center"
+        android:padding="8dp"
+        android:textSize="18dp"
+        android:textColor="@android:color/white"
+        android:background="@android:color/holo_red_light"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="!!The fields must not contain a character!!"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 
 

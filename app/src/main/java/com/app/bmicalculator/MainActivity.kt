@@ -15,7 +15,28 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-    fun checkForFloat(input: String): Boolean {
-        return false;
+    fun CalculateBmi(height: Float, weight: Float): Float {
+        var bmi = weight / (height * height);
+        return bmi;
+    }
+
+    fun ConvertStringToFloat(input: String): Float {
+        return if (CheckForFloat(input)) {
+            var b: Float = ConvertStringToFloat(input);
+            b;
+        }else {
+            0.0f;
+        }
+    }
+
+    fun CheckForFloat(input: String): Boolean {
+        try {
+            ConvertStringToFloat(input)
+        } catch (e: NullPointerException) {
+            println("failed because contains letters")
+            return false;
+        }
+
+        return true;
     }
 }

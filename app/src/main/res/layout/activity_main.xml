@@ -88,6 +88,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:layout_marginTop="158dp"
         android:layout_marginBottom="200dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -96,12 +97,20 @@
 
         <TextView
             android:id="@+id/BmiCalcAnswerText"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAlignment="center"
+            android:layout_gravity="center"
             android:text="Test"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="633dp" />
+        <TextView
+            android:id="@+id/BmiCalcAnswerDesc"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:text="You are fat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
     </LinearLayout>
 
     <TextView

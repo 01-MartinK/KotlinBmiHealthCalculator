@@ -12,6 +12,10 @@ import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity() {
 
+    val underweightBmiValue = 18.6
+    val overweightBmiValue = 25
+    val obeseBmiValue = 29
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -39,6 +43,22 @@ class MainActivity : AppCompatActivity() {
 
     fun calculateBmi(height: Float, weight: Float): Float {
         var bmi = weight / (height / 100 * height / 100);
+
+        var descTextView = findViewById<TextView>(R.id.BmiCalcAnswerDesc)
+
+        if (bmi > obeseBmiValue) {
+            descTextView.text = "You are obese!"
+        }
+        else if (bmi > overweightBmiValue && bmi < obeseBmiValue) {
+            descTextView.text = "You are fat."
+        }
+        else if (bmi > underweightBmiValue && bmi < overweightBmiValue) {
+            descTextView.text = "Normal weight range for a person about your height."
+        }
+        else if (bmi < underweightBmiValue) {
+            descTextView.text = "You are underweight."
+        }
+
         return bmi;
     }
 
